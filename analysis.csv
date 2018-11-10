@@ -1,8 +1,8 @@
 CVE ID,Score,Type,NVD CPE,Predicted Vulnerable Module - Coordinate 1,Predicted Vulnerable Module - Coordinate 2,Affected Versions,Patch URL,Exploit URL
-CVE-2009-2693,,,,,,,,
-CVE-2011-1582,,,,,,,,
-CVE-2012-0391,,,,,,,,
-CVE-2012-5783,,,,,,,,
+CVE-2009-2693,5.8,Directory traversal,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,(>=5.5.0&&<=5.5.28)||(>=6.0.0&&<=6.0.20),http://svn.apache.org/viewvc?view=revision&revision=892815,N/A
+CVE-2011-1582,4.3,Bypass a restriction or similar,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,7.0.12&&7.0.13,http://svn.apache.org/viewvc?view=revision&revision=1100832,N/A
+CVE-2012-0391,9.3,Execute code,cpe:2.3:a:apache:struts,org.apache.struts2,struts2-core,<2.2.3.1,"Not patched, issue does not affect the versions of struts as shipped with various Red Hat products.",http://www.exploit-db.com/exploits/18329
+CVE-2012-5783,5.8,Information disclosure,cpe:2.3:a:apache:commons-httpclient,org.apache.commons.httpclient.protocol,package org.apache.http.conn.ssl,>=3.0&&<4.0,https://issues.apache.org/jira/secure/attachment/12560251/CVE-2012-5783-2.patch,http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf
 CVE-2013-0441,,,,,,,,
 CVE-2013-2067,,,,,,,,
 CVE-2013-2446,,,,,,,,
