@@ -1,13 +1,13 @@
 CVE ID,Score,Type,NVD CPE,Predicted Vulnerable Module - Coordinate 1,Predicted Vulnerable Module - Coordinate 2,Affected Versions,Patch URL,Exploit URL
 CVE-2009-2693,5.8,Directory traversal,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,(>=5.5.0&&<=5.5.28)||(>=6.0.0&&<=6.0.20),http://svn.apache.org/viewvc?view=revision&revision=892815,N/A
-CVE-2011-1582,4.3,Bypass a restriction or similar,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,7.0.12&&7.0.13,http://svn.apache.org/viewvc?view=revision&revision=1100832,N/A
+CVE-2011-1582,4.3,Bypass restrictions,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,7.0.12&&7.0.13,http://svn.apache.org/viewvc/tomcat/trunk/java/org/apache/catalina/core/StandardWrapper.java?r1=1100832&r2=1100831&pathrev=1100832,N/A
 CVE-2012-0391,9.3,Execute code,cpe:2.3:a:apache:struts,org.apache.struts2,struts2-core,<2.2.3.1,"Not patched, issue does not affect the versions of struts as shipped with various Red Hat products.",http://www.exploit-db.com/exploits/18329
 CVE-2012-5783,5.8,Information disclosure,cpe:2.3:a:apache:commons-httpclient,org.apache.commons.httpclient.protocol,package org.apache.http.conn.ssl,>=3.0&&<4.0,https://issues.apache.org/jira/secure/attachment/12560251/CVE-2012-5783-2.patch,http://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf
-CVE-2013-0441,,,,,,,,
-CVE-2013-2067,,,,,,,,
-CVE-2013-2446,,,,,,,,
-CVE-2013-4221,,,,,,,,
-CVE-2013-6397,,,,,,,,
+CVE-2013-0441,10,Bypass restrictions,cpe:2.3:a:oracle:jre,oracle.jre,oracle.jdk,(>=7&&<=7u11)||(>=6&&<=6u38)||(>=5&&<=5u38),Not published,N/A
+CVE-2013-2067,6.8,Session fixation,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.catalina,(>=6.0.21&&<=6.0.36)||(>=7.0.0&&<=7.0.33),http://svn.apache.org/viewvc/tomcat/tc6.0.x/trunk/java/org/apache/catalina/authenticator/FormAuthenticator.java?r1=1417891&r2=1417890&pathrev=1417891,N/A
+CVE-2013-2446,5,Information disclosure,cpe:2.3:a:oracle:jre,oracle.jre,oracle.jdk,(>=7&&<=7u21)||(>=6&&<=6u45)||(>=5&&<=5u45),Not published,N/A
+CVE-2013-4221,7.5,Execute Code,cpe:2.3:a:restlet:restlet,org.restlet.engine,org.restlet.representation,<2.1.4,https://github.com/restlet/restlet-framework-java/commit/12cc79b3953c7bd276e9f1cae2fbfdb9c1a6f070,N/A
+CVE-2013-6397,4.3,Directory traversal,cpe:2.3:a:apache:solr,org.apache.solr.core,org.apache.solr.schema,<4.6,https://issues.apache.org/jira/browse/SOLR-4882,http://www.agarri.fr/kom/archives/2013/11/27/compromising_an_unreachable_solr_server_with_cve-2013-6397/index.html
 CVE-2014-0099,4.3,Integer Overflow,cpe:2.3:a:apache:tomcat,org.apache.tomcat,util.buf.Ascii.java,(>6.0.0 && < 6.0.40) && (7.0.0 && < 7.0.53) && (8.0.0 && < 8.0.4) ,http://svn.apache.org/viewvc?view=revision&revision=1578812,https://seclists.org/fulldisclosure/2014/May/140
 CVE-2014-2058,6.5,"Permissions, Privileges, and Access Control",cpe:2.3:a:jenkins:jenkins,java.hudson.model,AbstractProject,<1.551 && 1.532.2 LTS,https://github.com/jenkinsci/jenkins/commit/b6b2a367a7976be80a799c6a49fa6c58d778b50e,N/A
 CVE-2014-3600,9.8,Improper Restriction of XML External Entity Reference,cpe:2.3:a:apache:activemq,org.apache.activemq,filter,>5.0.0 && <5.10.1,https://git1-us-west.apache.org/repos/asf?p=activemq.git;a=commit;h=b9696ac8,N/A
@@ -32,10 +32,10 @@ CVE-2017-7677,5.9,Permissions Issue,cpe:2.3:a:apache:ranger,org.apache.ranger,Hi
 CVE-2018-1131,8.8,Deserialization of Untrusted Data,cpe:2.3:a:infinispan:infinispan,org.infinispan.infinispan,org.infinispan.infinispan,9.0.3 && 9.1.7 && 8.2.10 && 9.2.2 && 9.3.0,not fixed (https://bugzilla.redhat.com/show_bug.cgi?id=1576492),not disclosed
 CVE-2018-1325,6.1,Cross-Site Scripting,cpe:2.3:a:wicket-jquery-ui_project:wicket-jquery-ui,com.googlecode.wicket.kendo,ui,"<= 6.29.0, <= 7.10.1, <= 8.0.0-M9.1",not fixed,not disclosed
 CVE-2018-8034,,,,,,,,
-CVE-2017-14063,,,,,,,,
-CVE-2017-2606,,,,,,,,
-CVE-2017-3261,,,,,,,,
-CVE-2017-5643,,,,,,,,
+CVE-2017-14063,7.5,Unauthorized modification,cpe:2.3:a:async-http-client_project:async-http-client,org.asynchttpclient,org.asynchttpclient.uri,<2.0.35,https://github.com/AsyncHttpClient/async-http-client/commit/eb9e3347e45319be494db24d285a2aee4396f5d3,N/A
+CVE-2017-2606,4.3,Unauthorized disclosure of information,cpe:2.3:a:jenkins:jenkins,jenkins,jenkins.model,(<2.44)||(<2.32.2),https://github.com/jenkinsci/jenkins/commit/09cfbc9cd5c9df7c763bc976b7f5c51266b63719,N/A
+CVE-2017-3261,4.3,Unauthorized disclosure of information,cpe:2.3:a:oracle:jre,oracle.jre,oracle.jdk,6u131||7u121||8u112,Not published,N/A
+CVE-2017-5643,7.4,Server-side request forgery,cpe:2.3:a:apache:camel,org.apache.camel,org.apache.camel.processor.validation,(>=2.17.0&&<=2.17.5)||(>=2.18.0&&<=2.18.2),https://patch-diff.githubusercontent.com/raw/apache/camel/pull/1493.patch,N/A
 CVE-2017-7662,,,,,,,,
 CVE-2018-1000008,,,,,,,,
 CVE-2018-1051,,,,,,,,
