@@ -8,7 +8,7 @@ CVE-2013-2067,6.8,Session fixation,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org
 CVE-2013-2446,5,Information disclosure,cpe:2.3:a:oracle:jre,oracle.jre,oracle.jdk,(>=7&&<=7u21)||(>=6&&<=6u45)||(>=5&&<=5u45),Not published,N/A
 CVE-2013-4221,7.5,Execute Code,cpe:2.3:a:restlet:restlet,org.restlet.engine,org.restlet.representation,<2.1.4,https://github.com/restlet/restlet-framework-java/commit/12cc79b3953c7bd276e9f1cae2fbfdb9c1a6f070,N/A
 CVE-2013-6397,4.3,Directory traversal,cpe:2.3:a:apache:solr,org.apache.solr.core,org.apache.solr.schema,<4.6,https://issues.apache.org/jira/browse/SOLR-4882,http://www.agarri.fr/kom/archives/2013/11/27/compromising_an_unreachable_solr_server_with_cve-2013-6397/index.html
-CVE-2014-0099,4.3,Overflow,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.tomcat.util,<6.0.40||(>=7.0.0&&<7.0.53)||(>=8.0.0&&<8.0.4),http://svn.apache.org/viewvc/tomcat/trunk/java/org/apache/tomcat/util/buf/Ascii.java?r1=1578812&r2=1578811&pathrev=1578812,
+CVE-2014-0099,4.3,Overflow,cpe:2.3:a:apache:tomcat,org.apache.tomcat,org.apache.tomcat.util,<6.0.40||(>=7.0.0&&<7.0.53)||(>=8.0.0&&<8.0.4),http://svn.apache.org/viewvc/tomcat/trunk/java/org/apache/tomcat/util/buf/Ascii.java?r1=1578812&r2=1578811&pathrev=1578812,N/A
 CVE-2014-2058,,,,,,,,
 CVE-2014-3600,,,,,,,,
 CVE-2014-8125,,,,,,,,
