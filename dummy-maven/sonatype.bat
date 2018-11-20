@@ -1,0 +1,1 @@
+start "Sonatype Audit" call mvn org.sonatype.ossindex.maven:ossindex-maven-plugin:audit -f pom.xml
