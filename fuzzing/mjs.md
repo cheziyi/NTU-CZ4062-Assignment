@@ -1,10 +1,10 @@
+Input: `out_20181119_22_31_58/crash/w01_000000,sig:11,Havoc:6628:22272,src:w00_000014`
 ```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000000,sig:11,Havoc:6628:22272,src:w00_000014
-
 Program received signal SIGSEGV, Segmentation fault.
 mjs_parse_ffi_signature (mjs=0x666010, s=0x0, sig_len=0, sig=0x666770, sig_type=FFI_SIG_FUNC) at mjs.c:8289
 8289    mjs.c: No such file or directory.
-(gdb) bt
+```
+```
 #0  mjs_parse_ffi_signature (mjs=0x666010, s=0x0, sig_len=0, sig=0x666770, sig_type=FFI_SIG_FUNC) at mjs.c:8289
 #1  0x000000000040d079 in mjs_ffi_call (mjs=0x666010) at mjs.c:8739
 #2  0x0000000000417048 in mjs_execute (mjs=0x666010, off=145, res=0x7fffffffe4d8) at mjs.c:7902
@@ -16,15 +16,15 @@ mjs_parse_ffi_signature (mjs=0x666010, s=0x0, sig_len=0, sig=0x666770, sig_type=
 #5  main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
-
+Input: `out_20181119_22_31_58/crash/w01_000001,sig:6,Havoc:11108:24896,src:w00_000012`
 ```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000001,sig:6,Havoc:11108:24896,src:w00_000012
 mjs_main: mjs.c:10345: struct mjs_object *get_object_struct(mjs_val_t): Assertion `mjs_is_object(v)' failed.
 
 Program received signal SIGABRT, Aborted.
 0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 54      ../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
-(gdb) bt
+```
+```
 #0  0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 #1  0x00007ffff784002a in __GI_abort () at abort.c:89
 #2  0x00007ffff7836bd7 in __assert_fail_base (fmt=<optimized out>,
@@ -46,15 +46,15 @@ Program received signal SIGABRT, Aborted.
 #11 main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
-
+Input: `out_20181119_22_31_58/crash/w01_000008,sig:6,Havoc:58:5888,src:w00_000000`
 ```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000008,sig:6,Havoc:58:5888,src:w00_000000
 mjs_main: mjs.c:7018: mjs_val_t mjs_pop_val(struct mbuf *): Assertion `m->len >= sizeof(v)' failed.
 
 Program received signal SIGABRT, Aborted.
 0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 54      ../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
-(gdb) bt
+```
+```
 #0  0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 #1  0x00007ffff784002a in __GI_abort () at abort.c:89
 #2  0x00007ffff7836bd7 in __assert_fail_base (fmt=<optimized out>,
@@ -74,13 +74,14 @@ Program received signal SIGABRT, Aborted.
 #10 main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
-```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000020,sig:11,Splice:69:573,src:w01_001293
 
+Input: `out_20181119_22_31_58/crash/w01_000020,sig:11,Splice:69:573,src:w01_001293`
+```
 Program received signal SIGSEGV, Segmentation fault.
 __memcpy_avx_unaligned () at ../sysdeps/x86_64/multiarch/memcpy-avx-unaligned.S:267
 267     ../sysdeps/x86_64/multiarch/memcpy-avx-unaligned.S: No such file or directory.
-(gdb) bt
+```
+```
 #0  __memcpy_avx_unaligned () at ../sysdeps/x86_64/multiarch/memcpy-avx-unaligned.S:267
 #1  0x000000000041fde5 in embed_string (m=<optimized out>, offset=<optimized out>, p=0x686fa5 "", flags=1 '\001',
     len=<optimized out>) at mjs.c:12208
@@ -115,14 +116,16 @@ __memcpy_avx_unaligned () at ../sysdeps/x86_64/multiarch/memcpy-avx-unaligned.S:
 #22 main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
+
+Input: `out_20181119_22_31_58/crash/w01_000030,sig:6,Havoc:26747:27520,src:w01_001635`
 ```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000030,sig:6,Havoc:26747:27520,src:w01_001635
 mjs_main: mjs.c:7782: mjs_err_t mjs_execute(struct mjs *, size_t, mjs_val_t *): Assertion `mjs_stack_size(&mjs->scopes) > 0' failed.
 
 Program received signal SIGABRT, Aborted.
 0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 54      ../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
-(gdb) bt
+```
+```
 #0  0x00007ffff783e428 in __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:54
 #1  0x00007ffff784002a in __GI_abort () at abort.c:89
 #2  0x00007ffff7836bd7 in __assert_fail_base (fmt=<optimized out>,
@@ -141,16 +144,16 @@ Program received signal SIGABRT, Aborted.
 #7  main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
-
+Input: `out_20181119_22_31_58/crash/w01_000186,sig:11,Splice:1:16,src:w01_001735`
 ```
-Starting program: /home/docker/test-mjs-fot/mjs_main out_20181119_22_31_58/crash/w01_000186,sig:11,Splice:1:16,src:w01_001735
 true
 true
 
 Program received signal SIGSEGV, Segmentation fault.
 mjs_execute (mjs=0x666010, off=485, res=0x7fffffffe4d8) at mjs.c:7972
 7972    mjs.c: No such file or directory.
-(gdb) bt
+```
+```
 #0  mjs_execute (mjs=0x666010, off=485, res=0x7fffffffe4d8) at mjs.c:7972
 #1  0x0000000000411a01 in mjs_exec_internal (mjs=0x666010, path=<optimized out>, src=<optimized out>,
     generate_jsc=<optimized out>, res=0x7fffffffe5b0) at mjs.c:8106
