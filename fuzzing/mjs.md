@@ -16,6 +16,7 @@ mjs_parse_ffi_signature (mjs=0x666010, s=0x0, sig_len=0, sig=0x666770, sig_type=
 #5  main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
 
+
 Input: `out_20181119_22_31_58/crash/w01_000001,sig:6,Havoc:11108:24896,src:w00_000012`
 ```
 mjs_main: mjs.c:10345: struct mjs_object *get_object_struct(mjs_val_t): Assertion `mjs_is_object(v)' failed.
@@ -45,6 +46,7 @@ Program received signal SIGABRT, Aborted.
     res=<optimized out>) at mjs.c:8129
 #11 main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
+
 
 Input: `out_20181119_22_31_58/crash/w01_000008,sig:6,Havoc:58:5888,src:w00_000000`
 ```
@@ -143,6 +145,7 @@ Program received signal SIGABRT, Aborted.
     res=<optimized out>) at mjs.c:8129
 #7  main (argc=<optimized out>, argv=0x7fffffffe6e8) at mjs.c:10302
 ```
+
 
 Input: `out_20181119_22_31_58/crash/w01_000186,sig:11,Splice:1:16,src:w01_001735`
 ```
