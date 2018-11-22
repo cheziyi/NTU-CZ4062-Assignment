@@ -1,9 +1,14 @@
+GNU c++filt 2.15
+Copyright 2004 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License.  This program has absolutely no warranty.
+
 Source: http://ftp.gnu.org/gnu/binutils/binutils-2.15.tar.bz2
 
 
 
 Input: `out_20181119_22_32_01/crash/w01_000000,sig:11,Havoc:5594:27520,src:w01_000115`
-A null pointer dereference bug was found in function work_stuff_copy_to_from()(cplus-dem.c:1208)
+A null pointer dereference in function work_stuff_copy_to_from()(cplus-dem.c:1208)
 ```
 Program received signal SIGSEGV, Segmentation fault.
 strlen () at ../sysdeps/x86_64/strlen.S:106
@@ -21,6 +26,16 @@ strlen () at ../sysdeps/x86_64/strlen.S:106
     at ../../libiberty/cplus-dem.c:936
 #5  0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
+libiberty/cplus-dem.c
+```
+1206  for (i = 0; i < from->numb; i++)
+1207    {
+1208      int len = strlen (from->btypevec[i]) + 1;
+1209
+1210      to->btypevec[i] = xmalloc (len);
+1211      memcpy (to->btypevec[i], from->btypevec[i], len);
+1212    }
+```
 ```
 (gdb) p from
 $36 = (struct work_stuff *) 0x7fffffffe570
@@ -33,21 +48,11 @@ $39 = 0x0
 (gdb) p *from->btypevec[0]
 Cannot access memory at address 0x0
 ```
-libiberty/cplus-dem.c
-```
-1206  for (i = 0; i < from->numb; i++)
-1207    {
-1208      int len = strlen (from->btypevec[i]) + 1;
-1209
-1210      to->btypevec[i] = xmalloc (len);
-1211      memcpy (to->btypevec[i], from->btypevec[i], len);
-1212    }
-```
 
 
 
 Input: `out_20181119_22_32_01/crash/w01_000001,sig:11,Havoc:5470:31360,src:w01_000129`
-A null pointer dereference bug was found in function cplus_demangle_type()(cp-demangle.c:1827)
+A null pointer dereference in function cplus_demangle_type()(cp-demangle.c:1827)
 ```
 Program received signal SIGSEGV, Segmentation fault.
 cplus_demangle_type (di=0x7fffffffe4b8) at ../../libiberty/cp-demangle.c:1827
@@ -80,12 +85,6 @@ cplus_demangle_type (di=0x7fffffffe4b8) at ../../libiberty/cp-demangle.c:1827
     at ../../libiberty/cplus-dem.c:921
 #19 0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
-```
-(gdb) p ret
-$1 = (struct demangle_component *) 0x0
-(gdb) p ret->u.s_builtin.type
-Cannot access memory at address 0x8
-```
 libiberty/cp-demangle.c
 ```
 1819  switch (peek)
@@ -101,11 +100,17 @@ libiberty/cp-demangle.c
 1829      d_advance (di, 1);
 1830      break;
 ```
+```
+(gdb) p ret
+$1 = (struct demangle_component *) 0x0
+(gdb) p ret->u.s_builtin.type
+Cannot access memory at address 0x8
+```
 
 
 
 Input: `out_20181119_22_32_01/crash/w01_000015,sig:11,Havoc:1323:30080,src:w01_000270`
-A null pointer dereference bug was found in function d_name()(cp-demangle.c:1167)
+A null pointer dereference in function d_name()(cp-demangle.c:1167)
 ```
 Program received signal SIGSEGV, Segmentation fault.
 0x0000000000500ff7 in d_name (di=0x7fffffffe4b8) at ../../libiberty/cp-demangle.c:1167
@@ -143,12 +148,6 @@ Program received signal SIGSEGV, Segmentation fault.
     at ../../libiberty/cplus-dem.c:921
 #24 0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
-```
-(gdb) p peek
-$2 = <optimized out>
-(gdb) p di
-$3 = (struct d_info *) 0x7fffffffe4b8
-```
 libiberty/cp-demangle.c
 ```
 1111  char peek = d_peek_char (di);
@@ -161,10 +160,17 @@ libiberty/cp-demangle.c
 1166      dc = d_unqualified_name (di);
 1167      if (d_peek_char (di) == 'I')
 ```
+```
+(gdb) p peek
+$2 = <optimized out>
+(gdb) p di
+$3 = (struct d_info *) 0x7fffffffe4b8
+```
+
 
 
 Input: `out_20181119_22_32_01/crash/w01_000200,sig:11,Havoc:287:368,src:w01_001883`
-A null pointer dereference bug was found in function do_type()(cplus-dem.c:3760)
+A null pointer dereference in function do_type()(cplus-dem.c:3760)
 ```
 Program received signal SIGSEGV, Segmentation fault.
 0x00000000004d5e8a in do_type (work=0x7fffffffe570, mangled=0x7fffffffe4e8, result=0x7fffffffe340)
@@ -184,12 +190,6 @@ Program received signal SIGSEGV, Segmentation fault.
     at ../../libiberty/cplus-dem.c:936
 #5  0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
-```
-(gdb) p work
-$6 = (struct work_stuff *) 0x7fffffffe570
-(gdb) p work->btypevec
-$7 = (char **) 0x0
-```
 libiberty/cplus-dem.c
 ```
 3754    /* A back reference to a previously seen squangled type */
@@ -201,11 +201,17 @@ libiberty/cplus-dem.c
 3760	string_append (result, work->btypevec[n]);
 3761      break;
 ```
+```
+(gdb) p work
+$6 = (struct work_stuff *) 0x7fffffffe570
+(gdb) p work->btypevec
+$7 = (char **) 0x0
+```
 
 
 
 Input: `out_20181119_22_32_01/crash/w01_000400,sig:11,Havoc:182:532,src:w01_003608`
-A stack overflow / null pointer dereference bug was found in function d_substitution()(cp-demangle.c:2589)
+A stack overflow / null pointer dereference in function d_substitution()(cp-demangle.c:2589)
 ```
 Program received signal SIGSEGV, Segmentation fault.
 0x00000000004f830b in d_substitution (di=0x7fffffffe4b8, prefix=<optimized out>) at ../../libiberty/cp-demangle.c:2589
@@ -225,16 +231,6 @@ Program received signal SIGSEGV, Segmentation fault.
     at ../../libiberty/cplus-dem.c:921
 #10 0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
-```
-(gdb) p di
-$24 = (struct d_info *) 0x7fffffffe4b8
-(gdb) p di->next_sub
-$26 = 0
-(gdb) p di->subs
-$27 = (struct demangle_component **) 0x7fffffffdaa0
-(gdb) p di->subs[0]
-$30 = (struct demangle_component *) 0x7fffffffe4b8
-```
 libiberty/cp-demangle.c
 ```
 2562  if (c == '_' || IS_DIGIT (c) || IS_UPPER (c))
@@ -249,4 +245,14 @@ libiberty/cp-demangle.c
 2588
 2589      return di->subs[id];
 2590    }
+```
+```
+(gdb) p di
+$24 = (struct d_info *) 0x7fffffffe4b8
+(gdb) p di->next_sub
+$26 = 0
+(gdb) p di->subs
+$27 = (struct demangle_component **) 0x7fffffffdaa0
+(gdb) p di->subs[0]
+$30 = (struct demangle_component *) 0x7fffffffe4b8
 ```
