@@ -21,6 +21,18 @@ strlen () at ../sysdeps/x86_64/strlen.S:106
     at ../../libiberty/cplus-dem.c:936
 #5  0x00000000004027b9 in main (argc=<optimized out>, argv=<optimized out>) at ../../binutils/cxxfilt.c:270
 ```
+```
+(gdb) p from
+$36 = (struct work_stuff *) 0x7fffffffe570
+(gdb) p from->btypevec
+$37 = (char **) 0x75d430
+(gdb) p from->numb
+$38 = 1
+(gdb) p from->btypevec[0]
+$39 = 0x0
+(gdb) p *from->btypevec[0]
+Cannot access memory at address 0x0
+```
 libiberty/cplus-dem.c
 ```
 1206  for (i = 0; i < from->numb; i++)
